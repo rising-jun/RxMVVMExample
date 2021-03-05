@@ -9,9 +9,12 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    lazy var counterView = CounterView(frame: view.frame)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        view = counterView
     }
 
 
