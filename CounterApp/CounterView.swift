@@ -9,6 +9,9 @@ import Foundation
 import UIKit
 
 class CounterView: UIView{
+    
+    lazy var plusBtn = UIButton()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
