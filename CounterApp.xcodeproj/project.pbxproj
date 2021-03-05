@@ -9,21 +9,23 @@
 /* Begin PBXBuildFile section */
 		2C8A836C99DB5C48C94AA23A /* Pods_CounterApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0478EEAC8E4098D589EAC0AD /* Pods_CounterApp.framework */; };
 		7209AFAC25F1F1520015A394 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7209AFAB25F1F1520015A394 /* AppDelegate.swift */; };
-		7209AFB025F1F1520015A394 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7209AFAF25F1F1520015A394 /* ViewController.swift */; };
+		7209AFB025F1F1520015A394 /* CounterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7209AFAF25F1F1520015A394 /* CounterViewController.swift */; };
 		7209AFB525F1F1530015A394 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7209AFB425F1F1530015A394 /* Assets.xcassets */; };
 		7209AFB825F1F1530015A394 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7209AFB625F1F1530015A394 /* LaunchScreen.storyboard */; };
 		729B691425F1F3D00037A1D2 /* CounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729B691325F1F3D00037A1D2 /* CounterView.swift */; };
+		729B692B25F201300037A1D2 /* CounterReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729B692A25F201300037A1D2 /* CounterReactor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0478EEAC8E4098D589EAC0AD /* Pods_CounterApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CounterApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7209AFA825F1F1520015A394 /* CounterApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CounterApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7209AFAB25F1F1520015A394 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7209AFAF25F1F1520015A394 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		7209AFAF25F1F1520015A394 /* CounterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterViewController.swift; sourceTree = "<group>"; };
 		7209AFB425F1F1530015A394 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7209AFB725F1F1530015A394 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7209AFB925F1F1530015A394 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		729B691325F1F3D00037A1D2 /* CounterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterView.swift; sourceTree = "<group>"; };
+		729B692A25F201300037A1D2 /* CounterReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterReactor.swift; sourceTree = "<group>"; };
 		AE393E4CF8B11A5CAF1AE320 /* Pods-CounterApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CounterApp.release.xcconfig"; path = "Target Support Files/Pods-CounterApp/Pods-CounterApp.release.xcconfig"; sourceTree = "<group>"; };
 		BB4C22883B4C004DD4A08195 /* Pods-CounterApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CounterApp.debug.xcconfig"; path = "Target Support Files/Pods-CounterApp/Pods-CounterApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -78,14 +80,31 @@
 		7209AFAA25F1F1520015A394 /* CounterApp */ = {
 			isa = PBXGroup;
 			children = (
+				729B692925F2011F0037A1D2 /* viewmodel */,
+				729B692325F201010037A1D2 /* View */,
 				7209AFAB25F1F1520015A394 /* AppDelegate.swift */,
-				7209AFAF25F1F1520015A394 /* ViewController.swift */,
 				7209AFB425F1F1530015A394 /* Assets.xcassets */,
 				7209AFB625F1F1530015A394 /* LaunchScreen.storyboard */,
 				7209AFB925F1F1530015A394 /* Info.plist */,
-				729B691325F1F3D00037A1D2 /* CounterView.swift */,
 			);
 			path = CounterApp;
+			sourceTree = "<group>";
+		};
+		729B692325F201010037A1D2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				729B691325F1F3D00037A1D2 /* CounterView.swift */,
+				7209AFAF25F1F1520015A394 /* CounterViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		729B692925F2011F0037A1D2 /* viewmodel */ = {
+			isa = PBXGroup;
+			children = (
+				729B692A25F201300037A1D2 /* CounterReactor.swift */,
+			);
+			path = viewmodel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -201,9 +220,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7209AFB025F1F1520015A394 /* ViewController.swift in Sources */,
+				7209AFB025F1F1520015A394 /* CounterViewController.swift in Sources */,
 				7209AFAC25F1F1520015A394 /* AppDelegate.swift in Sources */,
 				729B691425F1F3D00037A1D2 /* CounterView.swift in Sources */,
+				729B692B25F201300037A1D2 /* CounterReactor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
