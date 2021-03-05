@@ -7,10 +7,13 @@
 
 import Foundation
 import UIKit
+import SnapKit
 
 class CounterView: UIView{
     
     lazy var plusBtn = UIButton()
+    lazy var minusBtn = UIButton()
+    lazy var countLabel = UILabel()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -24,6 +27,9 @@ class CounterView: UIView{
     
     func setup(){
         backgroundColor = .white
+        addSubViews(plusBtn, minusBtn, countLabel)
+        
+        
     }
 }
 
