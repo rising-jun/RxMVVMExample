@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 import SnapKit
 
+
 class CounterView: UIView{
     
     lazy var plusBtn = UIButton()
@@ -56,6 +57,7 @@ class CounterView: UIView{
             make.trailing.equalTo(countLabel.snp.leading).offset(-30)
             make.centerY.equalTo(countLabel.snp.centerY)
         }
+        
         
     }
 }

@@ -9,6 +9,7 @@ import Foundation
 import ReactorKit
 
 class CounterReactor: Reactor{
+    
     enum Action {
         case plusRequest(count: Int)
         case minusRequest(count: Int)
@@ -20,12 +21,13 @@ class CounterReactor: Reactor{
     }
     
     struct State{
-        var countState: Int?
+        var countState: Int = 0
     }
     
     let initialState: State = State()
     
     func mutate(action: Action) -> Observable<Mutation> {
+        
         switch action {
         case .plusRequest(count: let count):
             return Observable.just(Mutation.plusCount(count: count + 1))

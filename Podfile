@@ -10,6 +10,6 @@ target 'CounterApp' do
   pod 'SnapKit'
   pod 'RxSwift'
   pod 'ReactorKit'
-
+  pod 'RxCocoa'
 
 end
